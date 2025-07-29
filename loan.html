@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bank Loan Finder</title>
+<link rel="icon" href="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Step 1: Account Check -->
+<div id="step1" class="screen visible">
+  <h1>Bank Loan Finder</h1>
+  <h2>Do you have an account with us?</h2>
+  <div class="button-container">
+    <button class="button-small" onclick="goToStep('step2')">Yes</button>
+    <button class="button-small" onclick="goToStep('step3')">No</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 2: Service Selection -->
+<div id="step2" class="screen">
+  <h2>What Service Do you Need?</h2>
+  <button class="button-box" onclick="goToStep('step4')">Avail Personal Loan</button>
+  <button class="button-box" onclick="goToStep('step9')">Purchase a Home</button>
+  <button class="button-box" onclick="goToStep('step13')">Renovate my Home</button>
+  <button class="button-box" onclick="goToStep('step16')">Buy a Car</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step1')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 3: NID & Contact -->
+<div id="step3" class="screen">
+  <h2>Please Enter your NID and Contact</h2>
+  <input type="text" id="nid" placeholder="Enter NID" />
+  <input type="text" id="contact" placeholder="Enter Contact Number" />
+  <button class="button-box" onclick="submitForm()">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step1')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 4: Salary A/C Check -->
+<div id="step4" class="screen">
+  <h2>Do you have a Salary A/C with us?</h2>
+  <div class="button-container">
+    <button class="button-small" onclick="goToStep('step5')">Yes</button>
+    <button class="button-small" onclick="goToStep('step7')">No</button>
+  </div>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step2')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 5: Enter Salary A/C -->
+<div id="step5" class="screen">
+  <h2>Please enter your Salary A/C number</h2>
+  <input type="text" id="salaryAccount" placeholder="Enter Salary A/C Number" />
+  <button class="button-box" onclick="submitSalaryAccount()">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step4')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 6: Final Message -->
+<div id="step6" class="screen">
+  <h2 style="text-align: center;">
+    You can call one of our loan agents for a loan:<br />
+    <strong>01787619796</strong><br /><br />
+    Or,<br /><br />
+    We will contact with you shortly
+  </h2>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step1')">Start Over</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 7: Profession -->
+<div id="step7" class="screen">
+  <h2>May we know about profession?</h2>
+  <input type="text" id="professionInput" placeholder="Enter your profession" />
+  <button class="button-box" onclick="goToStep('step8')">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step4')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 8: Upload Salary Statement -->
+<div id="step8" class="screen">
+  <h2>Provide your Salary Statement</h2>
+  <input type="file" id="salaryStatement" accept=".pdf" />
+  <button class="button-box" onclick="submitSalaryStatement()">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step7')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 9: Home Loan Type -->
+<div id="step9" class="screen">
+  <h2>Home Loan Finder</h2>
+  <button class="button-box" onclick="goToStep('step10')">Private</button>
+  <button class="button-box" onclick="goToStep('step12')">Developer</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step2')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 10: Home Document Checklist -->
+<div id="step10" class="screen">
+  <h2>Do you have the following documents</h2>
+  <label><input type="checkbox" id="doc1" /> Deed of ownership</label><br />
+  <label><input type="checkbox" id="doc2" /> Bank Statement</label><br />
+  <label><input type="checkbox" id="doc3" /> FDR Documents</label><br /><br />
+  <button class="button-box" onclick="goToStep('step11')">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goBackFromStep10()">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 11: Upload Home Documents -->
+<div id="step11" class="screen">
+  <h2>Please upload the documents</h2>
+  <input type="file" accept=".pdf" /><br />
+  <input type="file" accept=".pdf" /><br />
+  <input type="file" accept=".pdf" /><br />
+  <button class="button-box" onclick="goToStep('step6')">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step10')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 12: Developer Name -->
+<div id="step12" class="screen">
+  <h2>Name of the Developer</h2>
+  <input type="text" id="developerName" placeholder="Enter Developer Name" />
+  <button class="button-box" onclick="goToStep('step10')">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step9')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+
+<!-- Step 13: Renovation Options -->
+<div id="step13" class="screen">
+  <h2>Home loan for renovating the home</h2>
+  <button class="button-box" onclick="goToStep('step14')">Renovate</button>
+  <button class="button-box" onclick="goToStep('step14')">Vertical Extension</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step2')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 14: Renovation Document Checklist -->
+<div id="step14" class="screen">
+  <h2>Do you have the following documents</h2>
+  <label><input type="checkbox" /> Deed of ownership</label><br />
+  <label><input type="checkbox" /> Bank Statement</label><br />
+  <label><input type="checkbox" /> FDR Documents</label><br /><br />
+  <button class="button-box" onclick="goToStep('step15')">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step13')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 15: Renovation Document Upload -->
+<div id="step15" class="screen">
+  <h2>Please upload the documents</h2>
+  <input type="file" accept=".pdf" /><br />
+  <input type="file" accept=".pdf" /><br />
+  <input type="file" accept=".pdf" /><br />
+  <button class="button-box" onclick="goToStep('step6')">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step14')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+
+<!-- Step 16: Type of Vehicle -->
+<div id="step16" class="screen">
+  <h2>Loan for Buying a car</h2>
+  <p>Type of Vehicle</p>
+  <input type="text" id="vehicleType" placeholder="e.g., Sedan, SUV" />
+  <button class="button-box" onclick="goToStep('step17')">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step2')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 17: Condition of the Car -->
+<div id="step17" class="screen">
+  <h2>Condition of the car?</h2>
+  <button class="button-box" onclick="goToStep('step18')">New</button>
+  <button class="button-box" onclick="goToStep('step18')">Reconditioned</button>
+  <button class="button-box" onclick="goToStep('step18')">Used</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step16')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 18: Car Loan Document Checklist -->
+<div id="step18" class="screen">
+  <h2>Do you have the following documents</h2>
+  <label><input type="checkbox" /> Driving License</label><br />
+  <label><input type="checkbox" /> Bank Statement</label><br />
+  <label><input type="checkbox" /> FDR Documents</label><br /><br />
+  <button class="button-box" onclick="goToStep('step19')">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step17')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+<!-- Step 19: Upload Car Loan Documents -->
+<div id="step19" class="screen">
+  <h2>Please upload the documents</h2>
+  <input type="file" accept=".pdf" /><br />
+  <input type="file" accept=".pdf" /><br />
+  <input type="file" accept=".pdf" /><br />
+  <button class="button-box" onclick="goToStep('step6')">Submit</button>
+  <div class="nav-buttons">
+    <button class="button-small" onclick="goToStep('step18')">Back</button>
+  </div>
+  <div class="logo-container">
+    <img src="/Users/abirsmac/Desktop/Brac Loan/Loan HTML Photos/Logo.png" alt="BRAC Bank Logo" />
+    <span>BRAC Bank PLC</span>
+  </div>
+</div>
+
+
+<script>
+  function goToStep(stepId) {
+    document.querySelectorAll('.screen').forEach(el => el.classList.remove('visible'));
+    document.getElementById(stepId).classList.add('visible');
+  }
+
+  function goBackFromStep10() {
+    const fromDeveloper = document.getElementById('step12').classList.contains('visible');
+    goToStep(fromDeveloper ? 'step12' : 'step9');
+  }
+
+  function submitForm() {
+    const nid = document.getElementById('nid').value.trim();
+    const contact = document.getElementById('contact').value.trim();
+    if (!nid || !contact) {
+      alert("Please enter both NID and Contact Number.");
+      return;
+    }
+    alert("Submitted successfully!");
+    goToStep('step2');
+    document.getElementById('nid').value = '';
+    document.getElementById('contact').value = '';
+  }
+
+  function submitSalaryAccount() {
+    const acc = document.getElementById('salaryAccount').value.trim();
+    if (!acc) {
+      alert("Please enter your Salary A/C number.");
+      return;
+    }
+    alert("Submitted successfully!");
+    goToStep('step6');
+  }
+
+  function submitSalaryStatement() {
+    const file = document.getElementById('salaryStatement').files[0];
+    if (!file || !file.name.endsWith('.pdf')) {
+      alert("Please upload a valid PDF.");
+      return;
+    }
+    alert("Statement submitted.");
+    goToStep('step6');
+  }
+</script>
+
+</body>
+</html>
